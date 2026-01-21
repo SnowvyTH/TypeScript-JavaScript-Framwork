@@ -5,7 +5,7 @@ const router = express.Router()
 
 // กำหนด interface สำหรับ product
 interface Product {
-    id: number
+    id: string
     name: string
     price: number
 }
@@ -19,7 +19,7 @@ router.get('/products', (_: Request, res: Response): void => {
 
 // GET /product/:id สำหรับดึงข้อมูลตาม id
 router.get('/products/:id', (req: Request, res: Response): void => {
-    const id = parseInt(req.params.id)
+    const id = req.params.id
     const product = products.find((product => product.id === id))
     // ถ้าไม่พบข้อมูล
     if (!product) {
@@ -40,5 +40,25 @@ router.post('/products', (req: Request, res: Response): void => {
         res.status(400).json({ message: "Missing required fields" })
         return
     }
+    console.log(req.body)
+
+    products.push({ id, name, price })
+    res.json({ message: "Product added successfully" })
 })
+
+// DELETE /products/:id
+router.delete('/products/:id', (req: Request, res: Response): void => {
+    const id = req.params.id
+
+    const index = products.findIndex(product => product.id === id)
+
+    if (index === -1) {
+        res.status(404).json({ message: "Product not found" })
+        return
+    }
+
+    products.splice(index, 1)
+    res.json({ message: "Product deleted successfully" })
+})
+
 export default router
