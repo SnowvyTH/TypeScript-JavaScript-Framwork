@@ -1,5 +1,5 @@
-import Navbar from "../components/front/Navbar";
-import Footer from "../components/front/Footer";
+import Navbar from "../../components/front/Navbar";
+import Footer from "../../components/front/Footer";
 
 
 export default function FrontLayout({

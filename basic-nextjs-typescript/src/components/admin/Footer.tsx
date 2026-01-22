@@ -5,7 +5,7 @@ type Props = {}
 export default function Footer({}: Props) {
   return (
     <footer className="bg-white border-t border-gray-200 dark:bg-gray-900 dark:border-gray-700">
-      <div className="max-w-screen-xl mx-auto p-4">
+      <div className="mx-auto p-4">
         <div className="text-center text-gray-500 dark:text-gray-400">
           © 2023 Your Company. All rights reserved.
         </div>
