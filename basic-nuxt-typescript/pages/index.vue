@@ -1,3 +1,17 @@
+<script setup lang="ts">
+
+  useHead({
+    title: 'Home - Nuxt Framework',
+    meta: [
+      {
+        name: 'description',
+        content: 'This is the home page of the Nuxt Framework application.' 
+      }
+    ]
+  })
+
+</script>
+
 <template>
     <div class="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-100">
       <div class="max-w-2xl w-full px-6 py-6 bg-white shadow-md rounded-lg">
