@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from "../../navigation/navbar/navbar.component";
 import { FooterComponent } from "../../footer/footer/footer.component";
-import { RouterOutlet } from "../../../../../../node_modules/@angular/router/router_module.d-Bx9ArA6K";
 
 @Component({
   selector: 'app-front-layout',
